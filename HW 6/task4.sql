@@ -35,11 +35,7 @@ WHERE s.staff_no
 NOT IN (SELECT DISTINCT waiter_no FROM restBill);
 
 -- 5
-SELECT 
-rb.cust_name, 
-rs.first_name AS headwaiter_first_name, 
-rs.surname AS headwaiter_surname, 
-rm.room_name
+SELECT rb.cust_name, rs.first_name AS headwaiter_first_name, rs.surname AS headwaiter_surname, rm.room_name
 FROM restBill rb
 JOIN restRest_table rt ON rb.table_no = rt.table_no
 JOIN restRoom_management rm 
